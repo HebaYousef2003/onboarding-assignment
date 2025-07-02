@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements Fragment2.OnDataP
             Fragment current = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
 
             if (current instanceof Fragment1) {
-                // الانتقال إلى Fragment2
                 Fragment2 fragment2 = Fragment2.newInstance();
                 getSupportFragmentManager()
                         .beginTransaction()
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements Fragment2.OnDataP
                 currentFragment = 2;
 
             } else if (current instanceof Fragment2) {
-                // استدعاء الدالة الموجودة في Fragment2 (onContinueClicked)
                 ((Fragment2) current).onContinueClicked();
             }
         });
