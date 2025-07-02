@@ -20,7 +20,7 @@ public class Fragment3 extends Fragment {
         // Required empty public constructor
     }
 
-    // لإنشاء instance مع تمرير اسم المستخدم
+    
     public static Fragment3 newInstance(String username) {
         Fragment3 fragment = new Fragment3();
         Bundle args = new Bundle();
@@ -33,8 +33,7 @@ public class Fragment3 extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            userName = getArguments().getString("user_name");  // المفتاح يجب أن يكون نفسه المستخدم في setArguments
-        }
+            userName = getArguments().getString("user_name"); 
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
