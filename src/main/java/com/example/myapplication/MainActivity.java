@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity implements Fragment2.OnDataP
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // نبدأ بتحميل Fragment1
         Fragment1 fragment1 = Fragment1.newInstance(null, null);
         getSupportFragmentManager()
                 .beginTransaction()
@@ -42,17 +41,12 @@ public class MainActivity extends AppCompatActivity implements Fragment2.OnDataP
                 // استدعاء الدالة الموجودة في Fragment2 (onContinueClicked)
                 ((Fragment2) current).onContinueClicked();
             }
-
-            // لاحقًا نضيف فحص إذا كان current instanceof Fragment3 مثلاً
         });
     }
 
-    // تنفيذ الـ interface بعد الضغط على "Continue" داخل Fragment2
     @Override
     public void onDataPass(String name) {
         Toast.makeText(this, "Name Received: " + name, Toast.LENGTH_SHORT).show();
-
-        // تمرير الاسم إلى Fragment3
         Fragment3 fragment3 = new Fragment3();
         Bundle bundle = new Bundle();
         bundle.putString("user_name", name);
